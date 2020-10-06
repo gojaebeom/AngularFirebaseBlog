@@ -1,0 +1,59 @@
+
+<!-- category -->
+<article class="category-wrap">
+    <h1 class="is-size-2">카테고리</h1>
+    <button 
+    class="button is-link is-rounded" 
+    *ngIf="isLogin"
+    (click)="modalToggle(modal)"
+    >생성</button>
+    <ul class="categories">
+        <li class="category" *ngFor="let category of categories">
+            <a routerLink="/category/{{category.path}}" class="category-img-wrap">
+                <img src="../../../assets/{{category.img}}" alt="{{category.img}}">
+            </a>
+            <a routerLink="/category/{{category.path}}" class="category-title-wrap">{{category.title}}</a>
+            <div *ngIf="isLogin">
+                <a (click)="modalToggle(modal, category.key)">
+                    수정
+                </a>
+                /
+                <a (click)="destroy(category)">
+                    삭제
+                </a>
+            </div>
+        </li>
+    </ul>
+
+</article>    
+
+<div class="modal" #modal>
+    <div class="modal-background"></div>
+    <div class="modal-content">
+        <div class="field">
+            <label class="label">제목</label>
+            <div class="control">
+                <input class="input" type="text" placeholder="e.g Alex Smith" [(ngModel)]="category.title">
+            </div>
+        </div>
+        <div class="field">
+            <label class="label">이미지</label>
+            <div class="control">
+                <input class="input" type="text" placeholder="e.g Alex Smith" [(ngModel)]="category.img">
+            </div>
+        </div>
+        <div class="field">
+            <label class="label">경로</label>
+            <div class="control">
+                <input class="input" type="text" placeholder="e.g Alex Smith" [(ngModel)]="category.path">
+            </div>
+        </div>
+        <div *ngIf="!category.key">
+            <button class="button is-link is-rounded" (click)="add(modal)">생성</button>
+        </div>
+        <div *ngIf="category.key">
+            <button class="button is-link is-rounded" (click)="edit(modal)">수정</button>
+        </div>
+    </div>
+    <button class="modal-close is-large" aria-label="close" (click)="modalToggle(modal)"></button>
+</div>

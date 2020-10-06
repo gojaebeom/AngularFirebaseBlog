@@ -1,0 +1,16 @@
+<h1 class="is-size-2">글 수정</h1>
+
+<label>제목</label>
+<input class="title" type="text" [(ngModel)]="board.title">
+<br>
+<label>내용</label>
+<editor 
+apiKey="4138m6uy6t3j82sk0faucdoudogejlpmrpzpo1yw4kto3hr9" 
+[init]="{plugins: 'link',height:'700'}"
+[(ngModel)]="board.content"
+(onSelectionChange)="handleEvent($event)"
+>
+</editor>
+<br>
+<br>
+<button class="button is-warning" (click)="edit()">수정</button>

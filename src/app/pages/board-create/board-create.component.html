@@ -1,0 +1,23 @@
+<!-- (onSelectionChange)="handleEvent($event)" -->
+<h1 class="is-size-2">글 작성</h1>
+
+<label>제목</label>
+<input class="title" type="text" [(ngModel)]="board.title">
+
+<label>내용</label>
+<editor 
+apiKey="4138m6uy6t3j82sk0faucdoudogejlpmrpzpo1yw4kto3hr9" 
+[init]="{
+height:'500',
+plugins: [
+    'advlist autolink lists link image charmap print',
+    'preview anchor searchreplace visualblocks code',
+    'fullscreen insertdatetime media table paste',
+    'help wordcount'
+]}"
+(onSelectionChange)="handleEvent($event)"
+>
+</editor>
+<br>
+<br>
+<button class="button is-warning" (click)="add()">생성</button>

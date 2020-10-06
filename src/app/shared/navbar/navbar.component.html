@@ -1,0 +1,9 @@
+<nav class="nav">
+    <a class="nav-logo" routerLink="/">INITIALIZE</a>
+    <div [ngSwitch]="commonService.isLogin">
+        
+        <a *ngSwitchCase="false" class="sign-in" routerLink="sign-in">ADMIN LOGIN</a>
+        <a *ngSwitchCase="true" class="sign-in" (click)="signOut()">LOGOUT</a>
+    </div>
+    
+</nav>

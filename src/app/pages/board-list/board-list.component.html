@@ -1,0 +1,22 @@
+<h1 class="is-size-2">{{categoryUrl | uppercase}}</h1>
+
+<a 
+*ngIf="isLogin"
+routerLink="/category/{{categoryUrl}}/create"
+>글 작성하기</a>
+<hr>
+<ul>
+    <li *ngFor="let board of boards">
+        <div *ngIf="board.category === categoryUrl">
+            <a 
+            class="is-size-4"
+            routerLink="/category/{{categoryUrl}}/{{board.key}}"
+            >{{board.title}}</a><br>
+            <div *ngIf="isLogin">
+                <a routerLink="/category/{{categoryUrl}}/{{board.key}}/edit">수정</a> /
+                <a (click)="destroy(board)">삭제</a>
+            </div> 
+            <hr>
+        </div>
+    </li>
+</ul>

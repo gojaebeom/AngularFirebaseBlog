@@ -1,0 +1,34 @@
+/* header */
+.header{
+    display:flex;
+    justify-content:center;
+    width:100%;
+    border-bottom:2px solid #E6E6E6;
+}
+
+.main{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+}
+
+.section{
+    width:680px;
+    min-height:90vh;
+}
+
+.footer{
+
+    width:100%;
+}
+
+@media screen and (max-width:1024px)
+{
+    .header{
+        display:block;
+    }
+    .section{
+        width:100%;
+    }
+}

@@ -1,0 +1,14 @@
+.board-wrap{
+    width:100%;
+    margin:0px auto; 
+}
+.content-wrap{
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+@media screen and (max-width:768px)
+{
+    .board-wrap{
+        width:100%;
+    }
+}

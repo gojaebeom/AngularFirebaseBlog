@@ -1,0 +1,9 @@
+<div class="board-wrap">
+    <h1 class="title is-size-2">{{board?.title}}</h1>
+    <br>
+    <br>
+    <div [innerHTML]="board?.content | sanitizeHtml" class="content-wrap"></div>
+    <br>
+    <br>
+    <disqus [identifier]="pageId"></disqus>
+</div>

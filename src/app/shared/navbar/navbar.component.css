@@ -1,0 +1,18 @@
+.nav{
+    width:1024px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px;
+}
+.nav-logo{
+    font-size:30px;
+    font-family: 'Fredoka One', cursive;
+}
+
+@media screen and (max-width:1024px)
+{
+    .nav{
+        width:100%;
+    }
+}
